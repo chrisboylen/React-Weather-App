@@ -5,7 +5,9 @@ import Welcome from './Welcome';
 class App extends Component {
   render() {
     return (
-      <Welcome />
+      <div className="app">
+        <Welcome />
+      </div>
     );
   }
 }
