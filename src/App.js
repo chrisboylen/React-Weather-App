@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 import './App.css';
 import Welcome from './Welcome';
-import currentWeatherCleaned from './dataCleaner';
-import CurrentWeather from './CurrWeather';
+import { currentWeatherCleaned } from './dataCleaner';
+import CurrentWeather from './CurrentWeather';
+import mockData from './mockData';
+
 
 class App extends Component {
   constructor () {
     super();
     this.state = {
-      currentWeather: currentWeather || []
+      currentWeather: []
     }
+    this.displayWeather = this.displayWeather.bind(this)
   }
+
+  displayWeather(mockData) {
+    this.setState({
+      currentWeather: currentWeatherCleaned(mockData)
+    })
+  }
+
   render() {
     return (
       <div className="app">
         <Welcome />
-        <CurrentWeather currentWeather={this.state.currentWeather} />
+        <CurrentWeather currentWeather={currentWeatherCleaned(mockData)} />
       </div>
     );
   }
