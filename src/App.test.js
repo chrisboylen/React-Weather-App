@@ -14,4 +14,10 @@ describe('App', () => {
     expect(wrapper).toBeDefined();
   })
 
+  it('should have a default state with an empty array of currentWeather', () => {
+    expect(wrapper.state()).toEqual({
+      currentWeather: []
+    })
+  })
+
 })
