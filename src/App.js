@@ -10,7 +10,9 @@ class App extends Component {
   constructor () {
     super();
     this.state = {
-      currentWeather: []
+      currentWeather: [],
+      sevenHour: [],
+      tenDay: []
     }
     this.displayWeather = this.displayWeather.bind(this)
   }
