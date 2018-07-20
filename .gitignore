@@ -10,7 +10,7 @@
 /build
 
 # api
-api.js
+./api.js
 
 # misc
 .DS_Store

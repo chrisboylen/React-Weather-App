@@ -22,6 +22,10 @@ describe('App', () => {
     })
   })
 
+  it('should render a header and todontlist componet', () => {
+    expect(wrapper.find('Header').length).toEqual(1);
+    expect(wrapper.find('ToDontList').length).toEqual(1);
+  })
   
 
 })
