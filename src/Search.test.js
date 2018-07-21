@@ -13,4 +13,8 @@ describe('Search', () => {
   it('should exist', () => {
     expect(wrapper).toBeDefined();
   })
+
+  it('should have a default state with an empty string of input', () => {
+    expect(wrapper.state()).toEqual({ input: '' })
+  })
 })
