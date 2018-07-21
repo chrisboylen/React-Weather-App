@@ -3,19 +3,23 @@ import './App.css';
 import Welcome from './Welcome';
 import { currentWeatherCleaned } from './dataCleaner';
 import CurrentWeather from './CurrentWeather';
+import Search from './Search';
 import mockData from './mockData';
+import { API_K } from './api';
 
 
 class App extends Component {
   constructor () {
     super();
     this.state = {
-      currentWeather: []
+      input: '',
+      currentWeather: [],
+      sevenHour: [],
+      tenDay: []
     }
-    this.displayWeather = this.displayWeather.bind(this)
   }
 
-  displayWeather(mockData) {
+  getUserLocation = (mockData) => {
     this.setState({
       currentWeather: currentWeatherCleaned(mockData)
     })
@@ -25,6 +29,7 @@ class App extends Component {
     return (
       <div className="app">
         <Welcome />
+        <Search />
         <CurrentWeather currentWeather={currentWeatherCleaned(mockData)} />
       </div>
     );
