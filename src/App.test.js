@@ -23,8 +23,9 @@ describe('App', () => {
     })
   })
 
-  it('should render a welcome and currentweather component', () => {
+  it('should render a welcome, search and currentweather component', () => {
     expect(wrapper.find('Welcome').length).toEqual(1);
+    expect(wrapper.find('Search').length).toEqual(1);
     expect(wrapper.find('CurrentWeather').length).toEqual(1);
   })
   

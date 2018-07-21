@@ -3,6 +3,7 @@ import './App.css';
 import Welcome from './Welcome';
 import { currentWeatherCleaned } from './dataCleaner';
 import CurrentWeather from './CurrentWeather';
+import Search from './Search';
 import mockData from './mockData';
 import { API_K } from '../api.js';
 
@@ -28,6 +29,7 @@ class App extends Component {
     return (
       <div className="app">
         <Welcome />
+        <Search />
         <CurrentWeather currentWeather={currentWeatherCleaned(mockData)} />
       </div>
     );
