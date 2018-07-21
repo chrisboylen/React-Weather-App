@@ -4,7 +4,6 @@ import Welcome from './Welcome';
 import { currentWeatherCleaned } from './dataCleaner';
 import CurrentWeather from './CurrentWeather';
 import Search from './Search';
-import mockData from './mockData';
 import { API_K } from './api';
 
 class App extends Component {
@@ -34,14 +33,24 @@ class App extends Component {
       // .catch(err => )
   }
 
-  render() {
+  renderWeather() {
     return (
-      <div className="app">
-        <Welcome />
+      <div className="weather">
         <Search getUserLocation={ this.getUserLocation } />
         <CurrentWeather currentWeather={ this.state.currentWeather } />
       </div>
-    );
+    )
+  }
+
+  render() {
+    if (this.state.input) {
+      return (
+        <div className="app">
+          < Welcome / >
+          
+        </div>
+      );
+    }
   }
 }
 

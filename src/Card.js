@@ -5,7 +5,7 @@ const Card = (props) => {
     <div className="current-weather">
       <h2>{props.city}</h2>
       <h2>{props.condition}</h2>
-      <p className="day">{props.day} TODAY</p>
+      <p className="day">{props.day}</p>
       <h1>{props.temp}</h1>
       <h3><span>High:</span> {props.high} | <span>Low:</span> {props.low} </h3>
       <p className="sum">{props.summary} </p>
