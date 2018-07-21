@@ -5,7 +5,7 @@ import { currentWeatherCleaned } from './dataCleaner';
 import CurrentWeather from './CurrentWeather';
 import Search from './Search';
 import mockData from './mockData';
-import { API_K } from '../api.js';
+import { API_K } from './api';
 
 
 class App extends Component {
