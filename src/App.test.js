@@ -26,19 +26,22 @@ describe('App', () => {
   it('should render a welcome, and search if there is no input', () => {
     expect(wrapper.find('Welcome').length).toEqual(1);
     expect(wrapper.find('Search').length).toEqual(1);
-    
   })
 
-  it('should render a search and currentWeather component if there is an input', () => {
+  it('should render a Search, CurrentWeather, SevenHour and TenDay component if there is an input', () => {
     let mockState = {
       input: 'Denver, CO',
-      currentWeather: [{}]
+      currentWeather: [{}],
+      sevenHour: [{}],
+      tenDay: [{}]
     };
 
     wrapper.setState(mockState)
 
     expect(wrapper.find('Search').length).toEqual(1);
     expect(wrapper.find('CurrentWeather').length).toEqual(1);
+    expect(wrapper.find('SevenHour').length).toEqual(1);
+    expect(wrapper.find('TenDay').length).toEqual(1);
   })
   
   
