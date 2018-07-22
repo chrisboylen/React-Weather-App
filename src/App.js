@@ -25,7 +25,7 @@ class App extends Component {
       .then(parsedData => {
         console.log(parsedData)
         this.setState({
-          location: input,
+          input: input,
           currentWeather: currentWeatherCleaned(parsedData)
           
         })
@@ -42,15 +42,21 @@ class App extends Component {
     )
   }
 
+  renderWelcome() {
+    return (
+      <div className="welcome">
+        <Welcome / >
+        <Search getUserLocation={ this.getUserLocation } />
+      </div>
+    )
+  }
+
   render() {
-    if (this.state.input) {
-      return (
-        <div className="app">
-          < Welcome / >
-          
-        </div>
-      );
-    }
+    return (
+      <div className="app">
+        { this.state.input ? this.renderWeather() : this.renderWelcome() }
+      </div>
+    )
   }
 }
 
