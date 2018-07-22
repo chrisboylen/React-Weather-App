@@ -9,10 +9,11 @@ const TenDay = (props) => {
           let tenDayKey = i;
 
           return  <Card
-                    day={ props.day }
-                    icon={ props.icon }
-                    high={ props.high }
-                    low={ props.low }
+                    day={ day.day }
+                    icon={ day.icon }
+                    high={ day.high }
+                    low={ day.low }
+                    key={ tenDayKey }
                   />
         })
       }

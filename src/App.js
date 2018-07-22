@@ -4,6 +4,7 @@ import { currentWeatherCleaned, sevenHourCleaned, tenDayCleaned } from './dataCl
 import Welcome from './Welcome';
 import CurrentWeather from './CurrentWeather';
 import SevenHour from './SevenHour';
+import TenDay from './TenDay';
 import Search from './Search';
 import { API_K } from './api';
 
@@ -28,7 +29,8 @@ class App extends Component {
         this.setState({
           input: input,
           currentWeather: currentWeatherCleaned(parsedData),
-          sevenHour: sevenHourCleaned(parsedData)
+          sevenHour: sevenHourCleaned(parsedData),
+          tenDay: tenDayCleaned(parsedData)
         })
       })
       // .catch(err => )
@@ -40,6 +42,7 @@ class App extends Component {
         <Search getUserLocation={ this.getUserLocation } />
         <CurrentWeather currentWeather={ this.state.currentWeather } />
         <SevenHour sevenHour={ this.state.sevenHour} />
+        <TenDay tenDay={ this.state.tenDay} />
       </div>
     )
   }
