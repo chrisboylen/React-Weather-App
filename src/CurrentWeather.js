@@ -7,7 +7,7 @@ const CurrentWeather = (props) => {
     <Card
       city = {props.currentWeather.city}
       condition = {props.currentWeather.condition}
-      day = {props.currentWeather.day}
+      currentDay = {props.currentWeather.day}
       temp = {props.currentWeather.temp}
       high = {props.currentWeather.high}
       low = {props.currentWeather.low}
