@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Welcome from './Welcome';
 import { currentWeatherCleaned, sevenHourCleaned, tenDayCleaned } from './dataCleaner';
+import Welcome from './Welcome';
 import CurrentWeather from './CurrentWeather';
+import SevenHour from './SevenHour';
 import Search from './Search';
 import { API_K } from './api';
 
