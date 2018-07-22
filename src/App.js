@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Welcome from './Welcome';
-import { currentWeatherCleaned } from './dataCleaner';
+import { currentWeatherCleaned, sevenHourCleaned, tenDayCleaned } from './dataCleaner';
 import CurrentWeather from './CurrentWeather';
 import Search from './Search';
 import { API_K } from './api';
@@ -26,8 +26,8 @@ class App extends Component {
         console.log(parsedData)
         this.setState({
           input: input,
-          currentWeather: currentWeatherCleaned(parsedData)
-          
+          currentWeather: currentWeatherCleaned(parsedData),
+          sevenHour: sevenHourCleaned(parsedData)
         })
       })
       // .catch(err => )
@@ -38,6 +38,7 @@ class App extends Component {
       <div className="weather">
         <Search getUserLocation={ this.getUserLocation } />
         <CurrentWeather currentWeather={ this.state.currentWeather } />
+        <SevenHour sevenHour={ this.state.sevenHour} />
       </div>
     )
   }
