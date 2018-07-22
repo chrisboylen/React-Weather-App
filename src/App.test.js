@@ -41,5 +41,5 @@ describe('App', () => {
     expect(wrapper.find('CurrentWeather').length).toEqual(1);
   })
   
-
+  
 })

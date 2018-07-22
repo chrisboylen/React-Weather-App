@@ -41,8 +41,8 @@ class App extends Component {
       <div className="weather">
         <Search getUserLocation={ this.getUserLocation } />
         <CurrentWeather currentWeather={ this.state.currentWeather } />
-        <SevenHour sevenHour={ this.state.sevenHour} />
-        <TenDay tenDay={ this.state.tenDay} />
+        <SevenHour sevenHour={ this.state.sevenHour } />
+        <TenDay tenDay={ this.state.tenDay } />
       </div>
     )
   }
