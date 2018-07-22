@@ -28,6 +28,18 @@ describe('App', () => {
     expect(wrapper.find('Search').length).toEqual(1);
     
   })
+
+  it('should render a search and currentWeather component if there is an input', () => {
+    let mockState = {
+      input: 'Denver, CO',
+      currentWeather: [{}]
+    };
+
+    wrapper.setState(mockState)
+
+    expect(wrapper.find('Search').length).toEqual(1);
+    expect(wrapper.find('CurrentWeather').length).toEqual(1);
+  })
   
 
 })
