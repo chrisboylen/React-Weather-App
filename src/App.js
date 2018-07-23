@@ -20,6 +20,13 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    const location = localStorage.getItem('location');
+    if (location) {
+    this.getUserLocation(location);
+    }
+  }
+
   getUserLocation = (input) => {
     const url = `http://api.wunderground.com/api/${API_K}//conditions/geolookup/hourly/forecast10day/q/${input}.json`;
 
@@ -38,10 +45,16 @@ class App extends Component {
         this.setState({
           hasError: true
         })
+        this.sendLocalStorage(input)
       })
   }
+  
+  sendLocalStorage (updateLocation) {
+    localStorage.setItem('location', updateLocation);
+  }
 
-  renderWeather() {
+
+  renderWeather(location) {
     return (
       <div className="weather">
         <Search getUserLocation={ this.getUserLocation } />

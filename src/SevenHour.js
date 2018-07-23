@@ -3,6 +3,7 @@ import Card from './Card';
 
 const SevenHour = (props) => {
   return (
+
     <div className="seven-hour">
       {
         props.sevenHour.map((hour, i) => {

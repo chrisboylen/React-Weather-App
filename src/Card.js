@@ -4,6 +4,7 @@ const Card = (props) => {
   if (props.city) {
     return (
       <div className="current-weather">
+
         <h2>{ props.city }</h2>
         <h2>{ props.condition }</h2>
         <p className="current-day">{ props.currentDay }</p>

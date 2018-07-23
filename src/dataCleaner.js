@@ -13,6 +13,7 @@ export const currentWeatherCleaned = (data) => {
   return currentWeatherCleaned;
 }
 
+
 export const sevenHourCleaned = (data) => {
   const sevenHourCleaned = [];
 
@@ -37,5 +38,5 @@ export const tenDayCleaned = (data) => {
       low: day.low.fahrenheit
     })
   })
-  return tenDayCleaned
+  return tenDayCleaned;
 }
