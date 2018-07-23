@@ -15,7 +15,8 @@ class App extends Component {
       input: '',
       currentWeather: [],
       sevenHour: [],
-      tenDay: []
+      tenDay: [], 
+      hasError: false
     }
   }
 
@@ -25,15 +26,19 @@ class App extends Component {
     fetch(url)
       .then(data => data.json())
       .then(parsedData => {
-        console.log(parsedData)
         this.setState({
           input: input,
           currentWeather: currentWeatherCleaned(parsedData),
           sevenHour: sevenHourCleaned(parsedData),
-          tenDay: tenDayCleaned(parsedData)
+          tenDay: tenDayCleaned(parsedData), 
+          hasError: false
         })
       })
-      // .catch(err => )
+      .catch(error => {
+        this.setState({
+          hasError: true
+        })
+      })
   }
 
   renderWeather() {
@@ -47,7 +52,7 @@ class App extends Component {
     )
   }
 
-  renderWelcome() {
+  renderErrorPage() {
     return (
       <div className="welcome">
         <Welcome / >
@@ -56,7 +61,7 @@ class App extends Component {
     )
   }
 
-  render() {
+  renderWelcome() {
     return (
       <div className="app">
         { this.state.input ? this.renderWeather() : this.renderWelcome() }

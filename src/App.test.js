@@ -19,7 +19,8 @@ describe('App', () => {
       input: '',
       currentWeather: [],
       sevenHour: [],
-      tenDay: []
+      tenDay: [], 
+      hasError: false
     })
   })
 
