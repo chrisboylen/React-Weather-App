@@ -12,18 +12,17 @@ describe('Card', () => {
     expect(wrapper).toBeDefined()
   })
 
-  it('should render a current weather card', () => {
+  it('should render a CurrentWeather component with the correct props', () => {
     let mockData = currentWeatherCleaned(data);
     let wrapper = mount(<Card
-                          city = { mockData.city }
-                          condition = { mockData.condition }
-                          currentDay = { mockData.currentDay }
-                          temp = { mockData.temp }
-                          high = { mockData.high }
-                          low = { mockData.low }
-                          summary = { mockData.summary }
+                          city={ mockData.city }
+                          condition={ mockData.condition }
+                          currentDay={ mockData.currentDay }
+                          temp={ mockData.temp }
+                          high={ mockData.high }
+                          low={ mockData.low }
+                          summary={ mockData.summary }
                         />);
-      console.log(wrapper.debug());
 
     expect(wrapper.find('.current-weather').length).toEqual(1);
     expect(wrapper.props().city).toEqual('Louisville');
@@ -33,5 +32,21 @@ describe('Card', () => {
     expect(wrapper.props().high).toEqual('51');
     expect(wrapper.props().low).toEqual('32');
     expect(wrapper.props().summary).toEqual('Sun and clouds mixed. High 51F. Winds NE at 10 to 15 mph.');
+  })
+
+  it('should render a TenDay component with the correct props', () => {
+    let mockData = tenDayCleaned(data);
+    let wrapper = mount(<Card 
+                          day={ mockData[0].day }
+                          icon={ mockData[0].icon }
+                          high={ mockData[0].high }
+                          low={ mockData[0].low }
+                        />);
+
+    expect(wrapper.find('.ten-day').length).toEqual(1);
+    expect(wrapper.props().day).toEqual('Wednesday');
+    expect(wrapper.props().icon).toEqual('http://icons.wxug.com/i/c/k/partlycloudy.gif');
+    expect(wrapper.props().high).toEqual('51');
+    expect(wrapper.props().low).toEqual('32');
   })
 })
