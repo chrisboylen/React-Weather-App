@@ -3,18 +3,22 @@ import Card from './Card';
 
 const SevenHour = (props) => {
   return (
-    <div>
-    <Card
-      condition = {props.sevenHour.condition}
-      hour = {props.sevenHour.hour}
-      temp = {props.sevenHour.temp}
-      conditionIcon = {props.sevenHour.conditionIcon}
 
-    />
+    <div className="seven-hour">
+      {
+        props.sevenHour.map((hour, i) => {
+          let sevenHourKey = i;
+
+          return  <Card
+                    hour={ hour.hour }
+                    icon={ hour.icon }
+                    temp={ hour.temp}
+                    key={ sevenHourKey }
+                  />       
+        })
+      }
     </div>
   )
-};
-
-
+}
 
 export default SevenHour;

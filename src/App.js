@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
+import { currentWeatherCleaned, sevenHourCleaned, tenDayCleaned } from './dataCleaner';
 import Welcome from './Welcome';
-import { currentWeatherCleaned } from './dataCleaner';
 import CurrentWeather from './CurrentWeather';
+import SevenHour from './SevenHour';
+import TenDay from './TenDay';
 import Search from './Search';
-import mockData from './mockData';
 import { API_K } from './api';
 
 class App extends Component {
@@ -26,22 +27,41 @@ class App extends Component {
       .then(parsedData => {
         console.log(parsedData)
         this.setState({
-          location: input,
-          currentWeather: currentWeatherCleaned(parsedData)
-          
+          input: input,
+          currentWeather: currentWeatherCleaned(parsedData),
+          sevenHour: sevenHourCleaned(parsedData),
+          tenDay: tenDayCleaned(parsedData)
         })
       })
       // .catch(err => )
   }
 
+  renderWeather() {
+    return (
+      <div className="weather">
+        <Search getUserLocation={ this.getUserLocation } />
+        <CurrentWeather currentWeather={ this.state.currentWeather } />
+        <SevenHour sevenHour={ this.state.sevenHour } />
+        <TenDay tenDay={ this.state.tenDay } />
+      </div>
+    )
+  }
+
+  renderWelcome() {
+    return (
+      <div className="welcome">
+        <Welcome / >
+        <Search getUserLocation={ this.getUserLocation } />
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className="app">
-        <Welcome />
-        <Search getUserLocation={ this.getUserLocation } />
-        <CurrentWeather currentWeather={ this.state.currentWeather } />
+        { this.state.input ? this.renderWeather() : this.renderWelcome() }
       </div>
-    );
+    )
   }
 }
 
