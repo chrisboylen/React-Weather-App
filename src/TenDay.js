@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './Card';
 
+
 const TenDay = (props) => {
   return (
     <div className="ten-day">
@@ -20,5 +21,6 @@ const TenDay = (props) => {
     </div>
   )
 }
+
 
 export default TenDay;
