@@ -19,7 +19,8 @@ describe('App', () => {
       input: '',
       currentWeather: [],
       sevenHour: [],
-      tenDay: []
+      tenDay: [], 
+      hasError: false
     })
   })
 
@@ -33,7 +34,8 @@ describe('App', () => {
       input: 'Denver, CO',
       currentWeather: [{}],
       sevenHour: [{}],
-      tenDay: [{}]
+      tenDay: [{}],
+      hasError: false
     };
 
     wrapper.setState(mockState)
@@ -44,5 +46,37 @@ describe('App', () => {
     expect(wrapper.find('TenDay').length).toEqual(1);
   })
   
-  
+  it('should render an error and search component when there is an error', () => {
+    let mockState = {
+      input: 'Denver, CO',
+      currentWeather: [{}],
+      sevenHour: [{}],
+      tenDay: [{}],
+      hasError: true
+    };
+
+    wrapper.setState(mockState)
+
+    expect(wrapper.find('Search').length).toEqual(1);
+    expect(wrapper.find('CurrentWeather').length).toEqual(0);
+    expect(wrapper.find('SevenHour').length).toEqual(0);
+    expect(wrapper.find('TenDay').length).toEqual(0);
+  })
+
+  it('should show error message when there is an error', () => {
+    let wrapper = mount(<App />)
+    let mockState = {
+      input: 'Denver, CO',
+      currentWeather: [{}],
+      sevenHour: [{}],
+      tenDay: [{}],
+      hasError: true
+    };
+    
+    wrapper.setState(mockState)
+    let messageDiv = wrapper.find('.err-msg');
+    
+    expect(messageDiv).toBeDefined();
+    expect(messageDiv.text()).toEqual("It looks as though something went wrong.")
+  })
 })
