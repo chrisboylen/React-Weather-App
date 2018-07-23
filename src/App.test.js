@@ -62,4 +62,21 @@ describe('App', () => {
     expect(wrapper.find('SevenHour').length).toEqual(0);
     expect(wrapper.find('TenDay').length).toEqual(0);
   })
+
+  it('should show error message when there is an error', () => {
+    let wrapper = mount(<App />)
+    let mockState = {
+      input: 'Denver, CO',
+      currentWeather: [{}],
+      sevenHour: [{}],
+      tenDay: [{}],
+      hasError: true
+    };
+    
+    wrapper.setState(mockState)
+    let messageDiv = wrapper.find('.err-msg');
+    
+    expect(messageDiv).toBeDefined();
+    expect(messageDiv.text()).toEqual("It looks as though something went wrong.")
+  })
 })

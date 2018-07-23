@@ -55,7 +55,7 @@ class App extends Component {
   renderErrorPage() {
     return (
       <div className="error">
-        <h1>It looks as though something went wrong.</h1>
+        <h1 className="err-msg">It looks as though something went wrong.</h1>
         <h2>Please enter your desired city, state to get your weather.</h2>
         <Search getUserLocation={ this.getUserLocation } />
       </div>
