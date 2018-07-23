@@ -38,4 +38,5 @@ export const tenDayCleaned = (data) => {
       low: day.low.fahrenheit
     })
   })
-  return tenDayCleaned
+  return tenDayCleaned;
+}
