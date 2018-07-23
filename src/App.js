@@ -54,8 +54,9 @@ class App extends Component {
 
   renderErrorPage() {
     return (
-      <div className="welcome">
-        <Welcome / >
+      <div className="error">
+        <h1>It looks as though something went wrong.</h1>
+        <h2>Please enter your desired city, state to get your weather.</h2>
         <Search getUserLocation={ this.getUserLocation } />
       </div>
     )
@@ -63,10 +64,23 @@ class App extends Component {
 
   renderWelcome() {
     return (
-      <div className="app">
-        { this.state.input ? this.renderWeather() : this.renderWelcome() }
+      <div className="welcome">
+        <Welcome />
+        <Search getUserLocation={ this.getUserLocation } />
       </div>
     )
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.renderErrorPage()
+    }
+    
+    if (this.state.input) {
+      return this.renderWeather()
+    } else {
+      return this.renderWelcome()
+    }
   }
 }
 
