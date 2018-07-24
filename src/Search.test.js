@@ -27,7 +27,7 @@ describe('Search', () => {
 
   it('should invoke getUserLocation when submit button is clicked', () => {
     const spy = jest.fn();
-    const wrapper = shallow(<Search getUserLocation={ spy } />);
+    wrapper = shallow(<Search getUserLocation={ spy } />);
     const button = wrapper.find('button');
 
     button.simulate('click')
@@ -35,5 +35,15 @@ describe('Search', () => {
     expect(spy).toHaveBeenCalled()
   })
 
-  it('should ')
+  it('should change state when submit button is clicked', () => {
+    const spy = jest.fn();
+    wrapper = shallow(<Search getUserLocation={ spy } />);
+    const button = wrapper.find('button');
+    const mockState = { input: 'Denver, CO' }
+
+    wrapper.setState(mockState)
+
+    button.simulate('click')
+    expect(wrapper.state()).toEqual(mockState)
+  })
 })
