@@ -49,7 +49,7 @@ class App extends Component {
       })
   }
   
-  sendLocalStorage (updateLocation) {
+  sendLocalStorage(updateLocation) {
     localStorage.setItem('location', updateLocation);
   }
 

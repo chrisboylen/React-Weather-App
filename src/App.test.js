@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import App from './App';
+import { currentWeatherCleaned, sevenHourCleaned, tenDayCleaned } from './dataCleaner';
+import data from './mockData';
 
 describe('App', () => {
   let wrapper;
