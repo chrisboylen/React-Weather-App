@@ -1,5 +1,37 @@
+body{
+  background-color: #e1eaf4;
+  display: grid;
+  font-family: arial;
+  grid-template-columns: 1fr, 1fr;
+  grid-template-rows: 1fr, 2fr, 2fr, 2fr, 2fr;
+  margin: 0;
+  max-width: 1600px;
+  width: 100%;
+}
+
+.current-weather {
+  text-align: center;
+  border-color: #4b5660;
+  border-style: solid;
+  border-width: 3px;
+  margin: 50px;
+}
+
+seven-hour {
+  display: grid;
+  grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
+  grid-row: 1 / 2;
+}
+
+
+
 .App {
   text-align: center;
+  width: 100%;
+  display: grid;
+  width: 100%;
+  margin: 2em;
+  grid-template-rows: 30% 30% 30%;
 }
 
 .App-logo {
