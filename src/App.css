@@ -1,60 +1,92 @@
-body{
-  background-color: #e1eaf4;
+/*.app{
+  background-color: #80293D;
   display: grid;
   font-family: arial;
-  grid-template-columns: 1fr, 1fr;
-  grid-template-rows: 1fr, 2fr, 2fr, 2fr, 2fr;
+  grid-template-rows: 70% 30%;
   margin: 0;
   max-width: 1600px;
+  height: 100vh;
   width: 100%;
-}
+}*/
 
 .current-weather {
   text-align: center;
   border-color: #4b5660;
   border-style: solid;
   border-width: 3px;
-  margin: 50px;
+  align-content: center;
+  background-color: white;
+  width: 50%;
+  margin: auto;
 }
 
-seven-hour {
+.seven-hour {
+  /*display: grid;
+  grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;*/
+  display: inline-flex;
+  background-color: white;
+  justify-content: space-between;
+  margin-top: 2em;
+
+
+}
+
+.ten-day{
+/*  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;*/
+  display: inline-flex;
+  background-color: white;
+  justify-content: space-between;
+}
+
+
+.weather {
+  height: 100vh;
+  width: 100%;
+  background-image: url(images/background.jpg);
+  background-repeat: no-repeat;
+  background-color: green;
+  background-size: cover;
+}
+
+.submit-field {
   display: grid;
-  grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
+  grid-template-rows: 50% 50% ;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.button { 
+  display: grid;
+  grid-row: 2 / 3;
+  grid-column: 2 / 4;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-left: 25%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 0.5em 1em;
+  width: 50%;
+}
+
+.button:hover {
+  background-color: #ddd6d7;
+}
+
+.input {
+  display: grid;
   grid-row: 1 / 2;
+  grid-column: 2 / 4;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-left: 25%;
+  margin-top: 4em;
+  padding: 0.5em 1em;
+  width: 47%;
 }
 
-
-
-.App {
+.input::placeholder {
   text-align: center;
-  width: 100%;
-  display: grid;
-  width: 100%;
-  margin: 2em;
-  grid-template-rows: 30% 30% 30%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
