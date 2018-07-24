@@ -25,7 +25,15 @@ describe('Search', () => {
     expect(wrapper.find('form').length).toEqual(1)
   })
 
-  
+  it('should invoke getUserLocation when submit button is clicked', () => {
+    const spy = jest.fn();
+    const wrapper = shallow(<Search getUserLocation={ spy } />);
+    const button = wrapper.find('button');
+
+    button.simulate('click')
+
+    expect(spy).toHaveBeenCalled()
+  })
 
   it('should ')
 })
