@@ -40,21 +40,22 @@ class App extends Component {
           tenDay: tenDayCleaned(parsedData), 
           hasError: false
         })
+        this.sendLocalStorage(input)
       })
       .catch(error => {
         this.setState({
           hasError: true
         })
-        this.sendLocalStorage(input)
+        
       })
   }
   
-  sendLocalStorage(updateLocation) {
-    localStorage.setItem('location', updateLocation);
+  sendLocalStorage(location){
+    const stringifiedLocation = JSON.stringify(location);
+    localStorage.setItem('location', stringifiedLocation);
   }
 
-
-  renderWeather(location) {
+  renderWeather() {
     return (
       <div className="weather">
         <Search getUserLocation={ this.getUserLocation } />
