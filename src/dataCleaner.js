@@ -1,5 +1,3 @@
-import mockData from './mockData';
-
 export const currentWeatherCleaned = (data) => {
   const currentWeatherCleaned = {
     city: data.current_observation.display_location.city,
