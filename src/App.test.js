@@ -81,4 +81,9 @@ describe('App', () => {
     expect(messageDiv).toBeDefined();
     expect(messageDiv.text()).toEqual("It looks as though something went wrong.")
   })
+
+  it('should change state with correct data when getUserLocation is invoked', () => {
+
+  })
+  
 })
