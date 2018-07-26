@@ -88,6 +88,7 @@ describe('App', () => {
   
   // it('should retrieve data from local storage on mount', () => {
   //   let mockData = {
+  //     location: 'Louisville, ky',
   //     currentWeather: currentWeatherCleaned(data),
   //     sevenHour: sevenHourCleaned(data),
   //     tenDay: tenDayCleaned(data)

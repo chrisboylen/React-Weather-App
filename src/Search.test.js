@@ -51,7 +51,7 @@ describe('Search', () => {
 
     // wrapper.setState(mockState)
     
-    wrapper.find('input').simulate('onChange');
+    wrapper.find('input').simulate('change');
 
     expect(wrapper.instance().updateLocation).toHaveBeenCalled();
     expect(wrapper.instance().updateLocation).toHaveBeenCalledTimes(1);
