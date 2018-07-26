@@ -71,7 +71,7 @@ class App extends Component {
       <div className="error">
         <h2 className="err-msg">It looks as though something went wrong.</h2>
         <h2 className="err-msg">Please enter a valid city, state to get your weather.</h2>
-        <Search class="error-search" getUserLocation={ this.getUserLocation } />
+        <Search getUserLocation={ this.getUserLocation } />
       </div>
     )
   }
