@@ -30,18 +30,20 @@ class Search extends Component {
 
   render() {
     return (
-      <form onSubmit={ (e) => e.preventDefault() }>
+      <form class="submit-field" onSubmit={ (e) => e.preventDefault() }>
         <input
+          class="input"
           type="text"
           autoFocus="autofocus"
           placeholder="Type city, state here!" 
           onChange={ (e) => this.updateLocation(e) }
           list="cities"
           />
+
         <datalist id="cities">
           { this.displaySuggestedWords() }
         </datalist>
-        <button onClick={ (e) => this.props.getUserLocation(this.state.input) }>
+        <button class="button" onClick={ (e) => this.props.getUserLocation(this.state.input) }>
           Submit
         </button>
       </form>
