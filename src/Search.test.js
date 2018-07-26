@@ -60,7 +60,6 @@ describe('Search', () => {
   it('should invoke updateLocation when submit button is clicked', () => {
     const spy = jest.fn();
     wrapper = shallow(<Search getUserLocation={ spy } />);
-    // wrapper.instance().submitIdea = jest.fn();
     const button = wrapper.find('button');
 
     button.simulate('click');

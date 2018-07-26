@@ -16,8 +16,12 @@ class Search extends Component {
   updateLocation = (e) => {
     this.setState({ 
       input: e.target.value,
-      suggestedWords: trie.suggest(this.state.input) 
+      suggestedWords: trie.suggest(this.state.input) || []
     })
+  }
+
+  displaySuggestedWords() {
+    return this.state.suggestedWords.map(word => <option>{ word }</option>).splice(0, 10)
   }
 
   render() {
@@ -31,6 +35,7 @@ class Search extends Component {
           list="cities"
           />
         <datalist id="cities">
+          { this.displaySuggestedWords()}
         </datalist>
         <button onClick={ (e) => this.props.getUserLocation(this.state.input) }>
           Submit
