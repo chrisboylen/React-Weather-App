@@ -9,12 +9,13 @@ const SevenHour = (props) => {
         props.sevenHour.map((hour, i) => {
           let sevenHourKey = i;
 
-          return  <Card
-                    hour={ hour.hour }
-                    icon={ hour.icon }
-                    temp={ hour.temp}
-                    key={ sevenHourKey }
-                  />       
+          return  <div key={ sevenHourKey }>
+                    <Card
+                      hour={ hour.hour }
+                      icon={ hour.icon }
+                      temp={ hour.temp }
+                    />  
+                  </div>     
         })
       }
     </div>

@@ -9,13 +9,14 @@ const TenDay = (props) => {
         props.tenDay.map((day, i) => {
           let tenDayKey = i;
 
-          return  <Card
-                    day={ day.day }
-                    icon={ day.icon }
-                    high={ day.high }
-                    low={ day.low }
-                    key={ tenDayKey }
-                  />
+          return  <div key={ tenDayKey }>
+                    <Card
+                      day={ day.day }
+                      icon={ day.icon }
+                      high={ day.high }
+                      low={ day.low }
+                    />
+                  </div>
         })
       }
     </div>

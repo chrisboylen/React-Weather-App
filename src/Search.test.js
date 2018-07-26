@@ -52,12 +52,12 @@ describe('Search', () => {
     expect(wrapper.instance().updateLocation).toHaveBeenCalledTimes(1);
   })
 
-  // it('should change state when updateLocation is invoked', () => {
-  //   const mockState = { input: 'Denver, CO' };
+  it('should change state when updateLocation is invoked', () => {
+    const mockState = { input: 'Denver, CO' };
 
-  //   wrapper.find('input').simulate('change' , {target: {value: mockState}});
-  //   expect(wrapper.state()).toEqual(mockState)
-  // })
+    wrapper.find('input').simulate('change' , {target: {value: mockState}});
+    expect(wrapper.state().input).toEqual(mockState)
+  })
 
   it('should change state when submit button is clicked', () => {
     const spy = jest.fn();

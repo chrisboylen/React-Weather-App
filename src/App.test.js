@@ -26,9 +26,29 @@ describe('App', () => {
     })
   })
 
+  it('should invoke renderWelcome method when there is no input', () => {
+    wrapper.instance().renderWelcome = jest.fn();
+    const mockState = { input: '' };
+
+    wrapper.setState(mockState)
+    
+    expect(wrapper.instance().renderWelcome).toHaveBeenCalled()
+    expect(wrapper.instance().renderWelcome).toHaveBeenCalledTimes(1)
+  })
+
   it('should render a welcome, and search if there is no input', () => {
     expect(wrapper.find('Welcome').length).toEqual(1);
     expect(wrapper.find('Search').length).toEqual(1);
+  })
+
+  it('should invoke renderWeather when there is an input', () => {
+    wrapper.instance().renderWeather = jest.fn();
+    const mockState = { input: 'Denver, CO' };
+
+    wrapper.setState(mockState)
+
+    expect(wrapper.instance().renderWeather).toHaveBeenCalled()
+    expect(wrapper.instance().renderWeather).toHaveBeenCalledTimes(1)
   })
 
   it('should render a Search, CurrentWeather, SevenHour and TenDay component if there is an input', () => {
@@ -46,6 +66,16 @@ describe('App', () => {
     expect(wrapper.find('CurrentWeather').length).toEqual(1);
     expect(wrapper.find('SevenHour').length).toEqual(1);
     expect(wrapper.find('TenDay').length).toEqual(1);
+  })
+
+  it('should invoke renderErrorPage when there is an error', () => {
+    wrapper.instance().renderErrorPage = jest.fn();
+    const mockState = { hasError: true };
+
+    wrapper.setState(mockState)
+
+    expect(wrapper.instance().renderErrorPage).toHaveBeenCalled();
+    expect(wrapper.instance().renderErrorPage).toHaveBeenCalledTimes(1);
   })
   
   it('should render an error and search component when there is an error', () => {
