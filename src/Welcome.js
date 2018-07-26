@@ -2,7 +2,7 @@ import React from 'react';
 
 const Welcome = () => {
   return (
-    <h1>Welcome to Weatherly</h1>
+    <h5>Welcome to Weatherly</h5>
   )
 }
 
