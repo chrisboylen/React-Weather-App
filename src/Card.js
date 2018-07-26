@@ -17,6 +17,7 @@ const Card = (props) => {
   }
   if (props.hour) {
     return (
+
       <div className="seven-hour-wrapper" id={ props.key }>
       <span className="seven-hour-element" className="seven-hour" >
         <h4>{ props.hour }</h4>
