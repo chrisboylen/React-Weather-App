@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chrisboylen/complete-me-2": "git+https://github.com/chrisboylen/complete-me-2.git",
+    "complete-me": "git+https://github.com/michaelyons/complete-me.git",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
