@@ -4,7 +4,7 @@ import Card from './Card';
 
 const TenDay = (props) => {
   return (
-    <div className="ten-day-test">
+    <div className="ten-day">
       {
         props.tenDay.map((day, i) => {
           let tenDayKey = i;
