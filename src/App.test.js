@@ -86,4 +86,17 @@ describe('App', () => {
 
   })
   
+  // it('should retrieve data from local storage on mount', () => {
+  //   let mockData = {
+  //     currentWeather: currentWeatherCleaned(data),
+  //     sevenHour: sevenHourCleaned(data),
+  //     tenDay: tenDayCleaned(data)
+  //   };
+
+  //   localStorage.setItem('location', JSON.stringify(mockData));
+
+  //   wrapper = mount(<App />);
+
+  //   expect(wrapper.state().toDonts).toEqual(toDonts);
+  // })
 })
