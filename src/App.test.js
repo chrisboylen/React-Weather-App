@@ -81,22 +81,12 @@ describe('App', () => {
     expect(messageDiv).toBeDefined();
     expect(messageDiv.text()).toEqual("It looks as though something went wrong.")
   })
-
-  it('should change state with correct data when getUserLocation is invoked', () => {
-
-  })
   
-  // it('should retrieve data from local storage on mount', () => {
-  //   let mockData = {
-  //     currentWeather: currentWeatherCleaned(data),
-  //     sevenHour: sevenHourCleaned(data),
-  //     tenDay: tenDayCleaned(data)
-  //   };
+  it('should retrieve data from local storage on mount', () => {
+    localStorage.setItem('input', 'denver, co')
+    const mockData =  localStorage.getItem('input')
+    const wrapper = mount(<App input={ mockData } />);
 
-  //   localStorage.setItem('location', JSON.stringify(mockData));
-
-  //   wrapper = mount(<App />);
-
-  //   expect(wrapper.state().toDonts).toEqual(toDonts);
-  // })
+    expect(wrapper.props().input).toEqual('denver, co');
+  })
 })

@@ -28,7 +28,7 @@ describe('Card', () => {
     expect(wrapper.props().city).toEqual('Louisville');
     expect(wrapper.props().condition).toEqual('Mostly Cloudy');
     expect(wrapper.props().currentDay).toEqual('Wednesday');
-    expect(wrapper.props().temp).toEqual(46);
+    expect(wrapper.props().temp).toEqual('46');
     expect(wrapper.props().high).toEqual('51');
     expect(wrapper.props().low).toEqual('32');
     expect(wrapper.props().summary).toEqual('Sun and clouds mixed. High 51F. Winds NE at 10 to 15 mph.');
