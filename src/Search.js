@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import locationData from './locationData';
-const { PrefixTrie } = require('complete-me-2');
-const trie = new PrefixTrie();
+const { Trie } = require('complete-me-2');
+const trie = new Trie();
 trie.populate(locationData);
 
 class Search extends Component {
