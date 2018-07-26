@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import TenDay from './TenDay';
-import { currentWeatherCleaned, sevenHourCleaned, tenDayCleaned } from './dataCleaner';
+import { tenDayCleaned } from './dataCleaner';
 import data from './mockData';
 
 describe('TenDay', () => {
