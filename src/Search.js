@@ -21,7 +21,11 @@ class Search extends Component {
   }
 
   displaySuggestedWords() {
-    return this.state.suggestedWords.map(word => <option>{ word }</option>).splice(0, 10)
+    return this.state.suggestedWords.map(word => {
+      if (this.state.input.length > 2) {
+        return <option>{ word }</option>
+      }
+    }).splice(0, 10)
   }
 
   render() {
