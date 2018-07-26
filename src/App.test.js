@@ -31,6 +31,15 @@ describe('App', () => {
     expect(wrapper.find('Search').length).toEqual(1);
   })
 
+  it('should invoke renderWeather when there is an input', () => {
+    wrapper.instance().renderWeather = jest.fn();
+    const mockState = { input: 'Denver, CO' };
+
+    wrapper.setState(mockState)
+
+    expect(wrapper.instance().renderWeather).toHaveBeenCalled()
+  })
+
   it('should render a Search, CurrentWeather, SevenHour and TenDay component if there is an input', () => {
     let mockState = {
       input: 'Denver, CO',
