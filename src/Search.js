@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import locationData from './locationData';
-// const { Trie } = require('@chrisboylen/complete-me-2');
-// const trie = new Trie();
-// trie.populate(locationData);
+const { PrefixTrie } = require('complete-me-2');
+const trie = new PrefixTrie();
+trie.populate(locationData);
 
 class Search extends Component {
   constructor() {
     super();
     this.state = {
-      input: ''
-      // suggestedWords: []
+      input: '',
+      suggestedWords: []
     }
   }
 
   updateLocation = (e) => {
     this.setState({ 
       input: e.target.value,
-      // suggestedWords: trie.suggest(this.state.input) 
+      suggestedWords: trie.suggest(this.state.input) 
     })
   }
 
@@ -28,7 +28,10 @@ class Search extends Component {
           autoFocus="autofocus"
           placeholder="Type city, state here!" 
           onChange={ (e) => this.updateLocation(e) }
+          list="cities"
           />
+        <datalist id="cities">
+        </datalist>
         <button onClick={ (e) => this.props.getUserLocation(this.state.input) }>
           Submit
         </button>

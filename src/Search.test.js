@@ -54,6 +54,7 @@ describe('Search', () => {
     wrapper.setState(mockState)
 
     button.simulate('click')
-    expect(wrapper.state()).toEqual(mockState)
+    expect(wrapper.state()).toEqual(mockState);
+    expect(wrapper.instance().getUserLocation).toHaveBeenCalled();
   })
 })
