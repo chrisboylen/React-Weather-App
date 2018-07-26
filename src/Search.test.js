@@ -36,7 +36,6 @@ describe('Search', () => {
   })
 
   it('should update the input in state as the user enters information', () => {
-    const input = wrapper.find('input');
     const mockState = { input: 'Denver, CO', suggestedWords: [] };
 
     wrapper.setState(mockState)
