@@ -5,10 +5,12 @@ const Card = (props) => {
     return (
       <div className="current-weather">
         <h1>{ props.temp }°F</h1>
+
         <span className="side-weather">
+
+        <h3 className="current-day">{ props.currentDay } <span> | High:</span> { props.high } | <span>Low:</span> { props.low } | <span> { props.condition } </span> </h3>
           <h2>{ props.city }</h2>
-          <p className="current-day">{ props.currentDay }</p>
-          <h3><span>High:</span> { props.high } | <span>Low:</span> { props.low } | <span> { props.condition } </span> </h3>
+          
           <p className="sum">{ props.summary } </p>
         </span>
       </div>
