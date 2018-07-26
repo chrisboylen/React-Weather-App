@@ -45,6 +45,18 @@ describe('Search', () => {
     expect(wrapper.state()).toEqual(mockState)
   }) 
 
+  it('should invoke updateLocation when user enters information', () => {
+    wrapper.instance().updateLocation = jest.fn();
+    // const mockState = { input: 'Denver, CO', suggestedWords: [] };
+
+    // wrapper.setState(mockState)
+    
+    wrapper.find('input').simulate('onChange');
+
+    expect(wrapper.instance().updateLocation).toHaveBeenCalled();
+    expect(wrapper.instance().updateLocation).toHaveBeenCalledTimes(1);
+  })
+
   it('should change state when submit button is clicked', () => {
     const spy = jest.fn();
     wrapper = shallow(<Search getUserLocation={ spy } />);

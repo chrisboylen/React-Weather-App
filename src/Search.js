@@ -35,7 +35,7 @@ class Search extends Component {
           list="cities"
           />
         <datalist id="cities">
-          { this.displaySuggestedWords()}
+          { this.displaySuggestedWords() }
         </datalist>
         <button onClick={ (e) => this.props.getUserLocation(this.state.input) }>
           Submit
