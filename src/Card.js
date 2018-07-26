@@ -10,7 +10,7 @@ const Card = (props) => {
             <span> | High:</span> { props.high } | <span>Low:</span> { props.low } | <span> { props.condition } </span> 
           </h3>
           <h2>{ props.city }</h2>
-          <p className="sum">{ props.summary } </p>
+          <h3 className="sum">{ props.summary } </h3>
         </span>
       </div>
     )
