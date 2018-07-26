@@ -26,6 +26,16 @@ describe('App', () => {
     })
   })
 
+  it('should invoke renderWelcome method when there is no input', () => {
+    wrapper.instance().renderWelcome = jest.fn();
+    const mockState = { input: '' };
+
+    wrapper.setState(mockState)
+    
+    expect(wrapper.instance().renderWelcome).toHaveBeenCalled()
+    expect(wrapper.instance().renderWelcome).toHaveBeenCalledTimes(1)
+  })
+
   it('should render a welcome, and search if there is no input', () => {
     expect(wrapper.find('Welcome').length).toEqual(1);
     expect(wrapper.find('Search').length).toEqual(1);
