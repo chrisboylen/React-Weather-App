@@ -106,10 +106,13 @@ describe('App', () => {
     };
     
     wrapper.setState(mockState)
-    let messageDiv = wrapper.find('.err-msg');
+    let messageDiv = wrapper.find('.err-one');
+    let messageDiv2 = wrapper.find('.err-two');
     
     expect(messageDiv).toBeDefined();
+    expect(messageDiv2).toBeDefined();
     expect(messageDiv.text()).toEqual("It looks as though something went wrong.")
+    expect(messageDiv2.text()).toEqual("Please enter a valid city, state to get your weather.")
   })
   
   it('should retrieve data from local storage on mount', () => {
