@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import TenDay from './TenDay';
+import { currentWeatherCleaned, sevenHourCleaned, tenDayCleaned } from './dataCleaner';
+import data from './mockData';
 
 describe('TenDay', () => {
   let wrapper;
@@ -12,5 +14,12 @@ describe('TenDay', () => {
 
   it('should exist', () => {
     expect(wrapper).toBeDefined();
+  })
+
+  it('should render the appropriate card components', () => {
+    const mockData = tenDayCleaned(data);
+    const wrapper = mount(<TenDay tenDay={ mockData } />)
+
+    expect(wrapper.find('.ten-day').length).toEqual(11)
   })
 })
