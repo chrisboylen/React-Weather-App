@@ -5,4 +5,6 @@ It is essentially a weather app that uses search functionality to render parsed 
 UX was inspired by a symplistic matte design that subverts the more "sleek modern" designs for a simplistic yet navigatable feel.
 
 Below is a version of our mockup process, inspiration and ultimate design.
+
+
 <img src=src/images/weatherly-visual.jpeg>
