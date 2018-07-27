@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Card = (props) => {
 	if (props.city) {
@@ -13,7 +13,7 @@ const Card = (props) => {
 					<h3 className="sum">{ props.summary } </h3>
 				</span>
 			</div>
-		)
+		);
 	}
 	if (props.hour) {
 		return (
@@ -24,7 +24,7 @@ const Card = (props) => {
 					<h4>{ props.temp }</h4>
 				</span>
 			</div>
-		)
+		);
 	}
 	if (props.day) {
 		return (
@@ -35,8 +35,8 @@ const Card = (props) => {
 					<p>{ props.high } | { props.low }</p>
 				</span>
 			</div>
-		)
+		);
 	}
-}
+};
 
-export default Card
+export default Card;

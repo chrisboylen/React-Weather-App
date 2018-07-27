@@ -1000,6 +1000,6 @@ const locationData = [
 	'Spanish Fork, UT',
 	'Beloit, WI',
 	'Panama City, FL'
-]
+];
 
-export default locationData
+export default locationData;

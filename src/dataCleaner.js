@@ -7,26 +7,26 @@ export const currentWeatherCleaned = (data) => {
 		high: data.forecast.simpleforecast.forecastday[0].high.fahrenheit,
 		low: data.forecast.simpleforecast.forecastday[0].low.fahrenheit,
 		summary: data.forecast.txt_forecast.forecastday[0].fcttext
-	}
-	return currentWeatherCleaned
-}
+	};
+	return currentWeatherCleaned;
+};
 
 
 export const sevenHourCleaned = (data) => {
-	const sevenHourCleaned = []
+	const sevenHourCleaned = [];
 
 	data.hourly_forecast.splice(0, 7).forEach(hour => {
 		sevenHourCleaned.push({
 			hour: hour.FCTTIME.civil,
 			icon: hour.icon_url,
 			temp: hour.temp.english
-		})
-	})
-	return sevenHourCleaned
-}
+		});
+	});
+	return sevenHourCleaned;
+};
 
 export const tenDayCleaned = (data) => {
-	const tenDayCleaned= []
+	const tenDayCleaned= [];
 
 	data.forecast.simpleforecast.forecastday.forEach(day => {
 		tenDayCleaned.push({
@@ -34,7 +34,7 @@ export const tenDayCleaned = (data) => {
 			icon: day.icon_url,
 			high: day.high.fahrenheit,
 			low: day.low.fahrenheit
-		})
-	})
-	return tenDayCleaned
-}
+		});
+	});
+	return tenDayCleaned;
+};

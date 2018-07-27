@@ -1,5 +1,5 @@
-import React from 'react'
-import Card from './Card'
+import React from 'react';
+import Card from './Card';
 
 
 const TenDay = (props) => {
@@ -7,7 +7,7 @@ const TenDay = (props) => {
 		<div className="ten-day">
 			{
 				props.tenDay.map((day, i) => {
-					let tenDayKey = i
+					let tenDayKey = i;
 
 					return  <Card
 						day={ day.day }
@@ -15,12 +15,12 @@ const TenDay = (props) => {
 						high={ day.high }
 						low={ day.low }
 						key={ tenDayKey }
-					/>
+					/>;
 				})
 			}
 		</div>
-	)
-}
+	);
+};
 
 
-export default TenDay
+export default TenDay;

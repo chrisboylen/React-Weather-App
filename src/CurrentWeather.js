@@ -1,5 +1,5 @@
-import React from 'react'
-import Card from './Card'
+import React from 'react';
+import Card from './Card';
 
 const CurrentWeather = (props) => {
 	return (
@@ -14,7 +14,7 @@ const CurrentWeather = (props) => {
 				summary = { props.currentWeather.summary }
 			/>
 		</div>
-	)
-}
+	);
+};
 
-export default CurrentWeather
+export default CurrentWeather;
