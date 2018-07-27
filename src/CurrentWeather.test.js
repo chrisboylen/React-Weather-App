@@ -1,8 +1,6 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme'
+import React from 'react'
+import { shallow } from 'enzyme'
 import CurrentWeather from './CurrentWeather'
-import { currentWeatherCleaned } from './dataCleaner'
-import data from './mockData'
 
 describe('CurrentWeather', () => {
 	let wrapper

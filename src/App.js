@@ -51,7 +51,6 @@ class App extends Component {
   }
   
   sendLocalStorage(location){
-    // const stringifiedLocation = JSON.stringify(location);
     localStorage.setItem('location', location);
   }
 
