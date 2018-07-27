@@ -38,8 +38,8 @@
 
 .seven-hour-wrapper {
   align-items: center;
-  background-color: white;
-  border-radius: 15%;
+  background-color: rgb(255, 246, 214, .8);
+  border-radius: 30px;
   color: #22b5ee;
   display: inline-flex;
   justify-content: space-between;

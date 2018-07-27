@@ -123,7 +123,7 @@ describe('App', () => {
     expect(wrapper.props().input).toEqual('denver, co');
   })
 
-  it('should save location to local storage', () => {
+  it('should save location to local storage when sendLocalStorage is invoked', () => {
     wrapper.instance().sendLocalStorage('denver, co');
 
     expect(localStorage.getItem('location')).toEqual('denver, co')
