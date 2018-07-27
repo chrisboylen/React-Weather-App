@@ -1,17 +1,18 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import CurrentWeather from './CurrentWeather';
+import { shallow, mount } from 'enzyme'
+import CurrentWeather from './CurrentWeather'
+import { currentWeatherCleaned } from './dataCleaner'
+import data from './mockData'
 
 describe('CurrentWeather', () => {
-  let wrapper;
+	let wrapper
 
-  beforeEach(() => {
-    localStorage.clear();
-    wrapper = shallow(<CurrentWeather currentWeather={[]} />);
-  })
+	beforeEach(() => {
+		localStorage.clear()
+		wrapper = shallow(<CurrentWeather currentWeather={[]} />)
+	})
   
-  it('Should exist', () => {
-    expect(wrapper).toBeDefined();
-  })
-
+	it('Should exist', () => {
+		expect(wrapper).toBeDefined()
+	})
 })
