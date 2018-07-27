@@ -59,6 +59,13 @@ describe('Search', () => {
     expect(wrapper.state().input).toEqual(mockState)
   })
 
+  it('should render an option element per suggesedWord based on input', () => {
+    wrapper.setState({ input: 'den' });
+
+    wrapper.setState({ suggestedWords: ['denver, co', 'denton, tx'] });
+    expect(wrapper.find('option').length).toEqual(2)
+  })
+
   it('should change state when submit button is clicked', () => {
     const spy = jest.fn();
     wrapper = shallow(<Search getUserLocation={ spy } />);

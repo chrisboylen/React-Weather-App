@@ -38,7 +38,7 @@
 
 .seven-hour-wrapper {
   align-items: center;
-  background-color: rgb(255, 246, 214, .8);
+  background-color: rgb(255, 246, 214, .9);
   border-radius: 30px;
   color: #22b5ee;
   display: inline-flex;
@@ -60,7 +60,7 @@
 
 .ten-day-wrapper {
   background-color: #288eb6;
-  border-radius: 15%;
+  border-radius: 30px;
   display: inline-flex;
   justify-content: space-between;
   margin: .5em;
