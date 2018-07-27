@@ -21,9 +21,9 @@ class Search extends Component {
   }
 
   displaySuggestedWords() {
-    return this.state.suggestedWords.map(word => {
+    return this.state.suggestedWords.map((word, i) => {
       if (this.state.input.length > 2) {
-        return <option>{ word }</option>
+        return <option key={i}>{ word }</option>
       }
     }).splice(0, 10)
   }
@@ -44,7 +44,7 @@ class Search extends Component {
           { this.displaySuggestedWords() }
         </datalist>
         <button className="button" onClick={ (e) => this.props.getUserLocation(this.state.input) }>
-          Submit
+          SEARCH
         </button>
       </form>
     );

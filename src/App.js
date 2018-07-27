@@ -46,13 +46,11 @@ class App extends Component {
         this.setState({
           hasError: true
         })
-        
       })
   }
   
   sendLocalStorage(location){
-    const stringifiedLocation = JSON.stringify(location);
-    localStorage.setItem('location', stringifiedLocation);
+    localStorage.setItem('location', location);
   }
 
   renderWeather() {
@@ -69,8 +67,8 @@ class App extends Component {
   renderErrorPage() {
     return (
       <div className="error">
-        <h2 className="err-msg">It looks as though something went wrong.</h2>
-        <h2 className="err-msg">Please enter a valid city, state to get your weather.</h2>
+        <h2 className="err-msg err-one">It looks as though something went wrong.</h2>
+        <h2 className="err-msg err-two">Please enter a valid city, state to get your weather.</h2>
         <Search getUserLocation={ this.getUserLocation } />
       </div>
     )
