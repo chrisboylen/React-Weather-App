@@ -20,6 +20,6 @@ describe('TenDay', () => {
 		const mockData = tenDayCleaned(data)
 		const wrapper = mount(<TenDay tenDay={ mockData } />)
 
-		expect(wrapper.find('.ten-day').length).toEqual(11)
+		expect(wrapper.find('Card').length).toEqual(10)
 	})
 })
