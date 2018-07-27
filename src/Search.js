@@ -44,7 +44,7 @@ class Search extends Component {
           { this.displaySuggestedWords() }
         </datalist>
         <button className="button" onClick={ (e) => this.props.getUserLocation(this.state.input) }>
-          Submit
+          SEARCH
         </button>
       </form>
     );

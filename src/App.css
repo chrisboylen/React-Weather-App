@@ -1,3 +1,7 @@
+body {
+  color: #e5f3ff;
+  font-size: 62.5%;
+}
 /*Weather Page Wrap*/
 
 .weather {
@@ -13,6 +17,14 @@
 }
 
 /*Weather*/
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
 
 .current-weather {
   display: inline-block;
@@ -38,7 +50,7 @@
 
 .seven-hour-wrapper {
   align-items: center;
-  background-color: rgb(255, 246, 214, .9);
+  background-color: rgb(255, 246, 214, .7);
   border-radius: 30px;
   color: #22b5ee;
   display: inline-flex;
@@ -71,8 +83,10 @@
 /*Text Input and Submit Form*/
 
 .button { 
+  background-color: #eee41f;
   border-radius: 12px;
-  font-size: 20px;
+  color: #374f72;
+  font-size: 1.2rem;
   font-weight: bold;
   padding: .75em;
   width: 40%;
@@ -84,7 +98,11 @@
 }
 
 .input {
-  font-size: 14px;
+  background-color: rgb(232, 253, 255, .3);
+  border: none;
+  border-radius: 10px;
+  color: #374f72;
+  font-size: 1.2rem;
   font-weight: bold;
   margin-right: 7em;
   padding: .5em;
@@ -92,8 +110,25 @@
 }
 
 .input::placeholder {
+  color: #374f72;
+}
+
+.input:focus {
+  background-color: rgb(232, 253, 255, .1);
+  border: 4px solid #eee41f;
+  color: #eee41f;
+  font-size: 1.2rem;
+  outline: none;
+
+}
+
+.input::placeholder {
   text-align: center;
-  font-size: 16px;
+  font-size: 1.2rem;
+}
+
+datalist {
+  background-color: #eee41f;
 }
 
 .submit-field {
