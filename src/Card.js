@@ -18,7 +18,7 @@ const Card = (props) => {
   if (props.hour) {
     return (
       <div className="seven-hour-wrapper" id={ props.key }>
-        <span className="seven-hour-element" className="seven-hour" >
+        <span className="seven-hour">
           <h4>{ props.hour }</h4>
           <img src={ props.icon } alt="Weather icon"/>
           <h4>{ props.temp }</h4>

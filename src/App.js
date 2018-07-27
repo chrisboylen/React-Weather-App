@@ -51,8 +51,8 @@ class App extends Component {
   }
   
   sendLocalStorage(location){
-    const stringifiedLocation = JSON.stringify(location);
-    localStorage.setItem('location', stringifiedLocation);
+    // const stringifiedLocation = JSON.stringify(location);
+    localStorage.setItem('location', location);
   }
 
   renderWeather() {
