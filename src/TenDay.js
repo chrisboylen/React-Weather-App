@@ -3,24 +3,14 @@ import Card from './Card';
 
 
 const TenDay = (props) => {
-	return (
-		<div className="ten-day">
-			{
-				props.tenDay.map((day, i) => {
-					let tenDayKey = i;
-
-					return  <Card
-						day={ day.day }
-						icon={ day.icon }
-						high={ day.high }
-						low={ day.low }
-						key={ tenDayKey }
-					/>;
-				})
-			}
-		</div>
-	);
-};
+	return props.tenDay.map((day, i) => {
+		return	(
+			<div className = "ten-day" key={ i }>
+				<Card day={ day }  />
+			</div>
+		);
+	})
+}
 
 
 export default TenDay;

@@ -1,24 +1,14 @@
 import React from 'react';
-import Card from './Card';
+import SevenHourCard from './SevenHourCard';
 
 const SevenHour = (props) => {
-	return (
-
-		<div className="seven-hour">
-			{
-				props.sevenHour.map((hour, i) => {
-					let sevenHourKey = i;
-
-					return  <Card
-						hour={ hour.hour }
-						icon={ hour.icon }
-						temp={ hour.temp}
-						key={ sevenHourKey }
-					/>;       
-				})
-			}
-		</div>
-	);
+	return props.sevenHour.map((hour, i) => {
+		return	(
+			<div className = "seven-hour" key={ i }>
+				<SevenHourCard hour={ hour } />
+			</div>
+		)
+	})
 };
 
 export default SevenHour;
