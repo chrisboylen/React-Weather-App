@@ -1,5 +1,5 @@
 import React from 'react';
-import TenDayCard from './Card';
+import TenDayCard from './TenDayCard';
 
 const TenDay = (props) => {
 	return <div className = "ten-day">

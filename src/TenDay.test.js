@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme';
 import TenDay from './TenDay';
 import { tenDayCleaned } from './dataCleaner';
 import data from './mockData';
+import TenDayCard from './TenDayCard';
 
 describe('TenDay', () => {
 	let wrapper;
@@ -20,6 +21,6 @@ describe('TenDay', () => {
 		const mockData = tenDayCleaned(data);
 		const wrapper = mount(<TenDay tenDay={ mockData } />);
 
-		expect(wrapper.find('Card').length).toEqual(10);
+		expect(wrapper.find('TenDayCard').length).toEqual(10);
 	});
 });
