@@ -2,13 +2,13 @@ import React from 'react';
 import SevenHourCard from './SevenHourCard';
 
 const SevenHour = (props) => {
-	return props.sevenHour.map((hour, i) => {
-		return	(
-			<div className = "seven-hour" key={ i }>
-				<SevenHourCard hour={ hour } />
-			</div>
-		)
-	})
+	return <div className = "seven-hour">
+		{
+			props.sevenHour.map((hour, i) => {
+				return	<SevenHourCard hour={ hour } key={ i } />;
+			})
+		}
+	</div>;
 };
 
 export default SevenHour;
