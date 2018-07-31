@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme';
 import TenDay from './TenDay';
 import { tenDayCleaned } from './dataCleaner';
 import data from './mockData';
+import TenDayCard from './TenDayCard';
 
 describe('TenDay', () => {
 	let wrapper;
@@ -18,8 +19,17 @@ describe('TenDay', () => {
 
 	it('should render the appropriate card components', () => {
 		const mockData = tenDayCleaned(data);
-		const wrapper = mount(<TenDay tenDay={ mockData } />);
-
-		expect(wrapper.find('Card').length).toEqual(10);
+		const wrapper = mount(<TenDayCard 
+			day={ mockData[0].day }
+			icon={ mockData[0].icon }
+			high={ mockData[0].high }
+			low={ mockData[0].low }
+		/>);
+		
+		expect(wrapper.find('TenDayCard').length).toEqual(1);
+		expect(wrapper.props().day).toEqual('Wednesday');
+		expect(wrapper.props().icon).toEqual('http://icons.wxug.com/i/c/k/partlycloudy.gif');
+		expect(wrapper.props().high).toEqual('51');
+		expect(wrapper.props().low).toEqual('32');
 	});
 });

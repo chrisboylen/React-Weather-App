@@ -1,25 +1,14 @@
 import React from 'react';
-import Card from './Card';
-
+import TenDayCard from './TenDayCard';
 
 const TenDay = (props) => {
-	return (
-		<div className="ten-day">
-			{
-				props.tenDay.map((day, i) => {
-					let tenDayKey = i;
-
-					return  <Card
-						day={ day.day }
-						icon={ day.icon }
-						high={ day.high }
-						low={ day.low }
-						key={ tenDayKey }
-					/>;
-				})
-			}
-		</div>
-	);
+	return <div className = "ten-day">
+		{
+			props.tenDay.map((day, i) => {
+				return	<TenDayCard day={ day } key={ i } />;
+			})
+		}
+	</div>;
 };
 
 
